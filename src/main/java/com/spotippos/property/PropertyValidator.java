@@ -32,6 +32,16 @@ public class PropertyValidator implements Validatable {
 			throw new BussinessException("É permitido o cadastro de no máximo " + MAX_SQUARE_METERS + " metros quadrados, e no mínimo " + MIN_SQUARE_METERS);
 		}
 		
+		if (!this.validCoordinates()) {
+			
+			StringBuilder message = new StringBuilder("Cadastro não permitido: Imóvel fora das coordenadas geográficas do Spotippos: ");
+			message.append(MIN_X + " <= x <= " + MAX_X);
+			message.append(" e ");
+			message.append(MIN_Y + " <= y <= " + MAX_Y);
+			
+			throw new BussinessException(message.toString());
+		}
+		
 	}
 	
 	private boolean isNotBlank(String value) {
@@ -57,6 +67,10 @@ public class PropertyValidator implements Validatable {
 	static final int MAX_BEDS = 5;
 	static final int MIN_BATHS = 1;
 	static final int MAX_BATHS = 4;
+	static final int MIN_X = 0;
+	static final int MAX_X = 1400;
+	static final int MIN_Y = 0;
+	static final int MAX_Y = 1000;
 	static final BigDecimal MIN_SQUARE_METERS = new BigDecimal(20);
 	static final BigDecimal MAX_SQUARE_METERS = new BigDecimal(240);
 
@@ -86,6 +100,10 @@ public class PropertyValidator implements Validatable {
 
 	public boolean validSquareMeters() {
 		return this.between(this.property.getSquareMeters(), MIN_SQUARE_METERS, MAX_SQUARE_METERS);
+	}
+	
+	public boolean validCoordinates() {
+		return this.between(this.property.getX(), MIN_X, MAX_X) && this.between(this.property.getY(), MIN_Y, MAX_Y);
 	}
 
 }

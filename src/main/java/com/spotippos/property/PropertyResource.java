@@ -38,7 +38,7 @@ public class PropertyResource extends Application {
 	public Properties find(@QueryParam("ax") Integer ax, @QueryParam("ay") Integer ay,
 					 @QueryParam("bx") Integer bx, @QueryParam("by") Integer by) {
 		
-		return new Properties();
+		return this.propertyRepository.find(ax, ay, bx, by);
 	}
 
 }

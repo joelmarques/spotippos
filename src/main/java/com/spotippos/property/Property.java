@@ -1,11 +1,14 @@
 package com.spotippos.property;
 
 import java.math.BigDecimal;
+import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import com.spotippos.province.Provinces;
 
 @Entity
 public class Property {
@@ -29,7 +32,7 @@ public class Property {
 	private Integer baths;
 
 	private BigDecimal squareMeters;
-
+	
 	public Property() {
 		super();
 	}
@@ -104,6 +107,10 @@ public class Property {
 
 	public void setSquareMeters(BigDecimal squareMeters) {
 		this.squareMeters = squareMeters;
+	}
+	
+	public Collection<String> getProvinces() {
+		return new Provinces().provinces(x, y);
 	}
 
 	@Override

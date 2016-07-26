@@ -4,13 +4,15 @@ Lenda de Spotippos
 
 Como rodar o projeto:
 
-Configurar Java 7 ou 8
+```
+1) Configurar Java 7 ou 8
 
-Baixar o servidor Java EE WildFly, versão wildfly-8.1.0.Final, em http://wildfly.org/downloads/
+2) Baixar o servidor Java EE WildFly, versão wildfly-8.1.0.Final, em http://wildfly.org/downloads/
 
-Copiar o arquivo spotippos.war para o diretorio 'standalone/deployments' do WildFly
+3) Copiar o arquivo spotippos.war para o diretorio 'standalone/deployments' do WildFly
 
-Iniciar o WildFly executando o script 'bin/standalone.sh' ou 'bin/standalone.bat', se linux ou windows
+4) Iniciar o WildFly executando o script 'bin/standalone.sh' ou 'bin/standalone.bat', se linux ou windows
+```
 
 TESTES
 Utilizando alguma ferramenta como o Postman para requisições em uma API Rest.

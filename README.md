@@ -19,10 +19,13 @@ Utilizando alguma ferramenta como o Postman para requisições em uma API Rest.
 
 Request:
 
+```
 POST localhost:8080/spotippos/properties
+```
 
 Body: JSON(application/json)
 
+```json
 {
   "x": 222,
   "y": 444,
@@ -33,30 +36,39 @@ Body: JSON(application/json)
   "baths": 4,
   "squareMeters": 210
 }
+```
 
 Response: JSON
+
+```json
 
 {
   "status": "Success",
   "message": "Operation was successful"
 }
+```
 
 ou alguma validação de negócio. 
 Ex:
 
+```json
 {
   "status": "Error",
   "message": "É permitido o cadastro de no máximo 240 metros quadrados, e no mínimo 20"
 }
+```
 
 2. Mostre um imóvel específico em Spotippos =]
 
 Request:
 
+```
 GET localhost:8080/spotippos/properties/{id}
+```
 
 Response:
 
+```json
 {
   "id": 1,
   "x": 222,
@@ -72,14 +84,19 @@ Response:
   ]
 }
 
+```
+
 3. Busque imóveis em Spotippos :D
 
 Request:
 
+```
 GET localhost:8080/spotippos/properties?ax={integer}&ay={integer}&bx={integer}&by={integer}
+```
 
 Response:
 
+```json
 {
   "foundProperties": 3,
   "properties": [
@@ -127,4 +144,4 @@ Response:
     }
   ]
 }
-
+```
